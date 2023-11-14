@@ -1,10 +1,10 @@
-
 <?php
 
 session_start();
 
 include('conexao.php');
 include('funcoes.php');
+include("validaradmingerente.php");
 
 $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
 $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : '';
@@ -28,9 +28,9 @@ VALUES
     ('$nome', '$cpf', '$telefone')";
     $queryusuario = mysqli_query($conexao, $insertusuario);
     $senhacriptografada = criptografar($senha);
-    $insertlogin = "INSERT INTO login (cpf, login, senha)
+    $insertlogin = "INSERT INTO login (cpf, login, senha, nivel)
 VALUES 
-    ('$cpf', '$login', '$senhacriptografada')";
+    ('$cpf', '$login', '$senhacriptografada', 3)";
     $querylogin = mysqli_query($conexao, $insertlogin);
     echo '<script>alert("Usuário cadastrado com sucesso");
 			window.location="addusuario.php";
