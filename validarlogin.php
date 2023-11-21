@@ -1,10 +1,11 @@
 <?php
 
-if(!isset($_SESSION)) {
-    Session_start();
+if(!isset($_SESSION)) { 
+  session_start(); 
 }
 
-IF($_SESSION['logado'] == false){
-    header('Location: index.php');
+if($_SESSION['logado'] == false){
+	header('Location: index.php');
 }
+
 ?>
