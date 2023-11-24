@@ -43,10 +43,18 @@ if ($telefone <> NULL) {
                 <td><?php echo $dados[0] ?></td>
                 <td><?php echo $dados[1] ?></td>
                 <td><input type="text" name="telefone" value="<?php echo $dados[2] ?>"></td>
-                <td><input type="submit" name="atualizar" value="Atualizar"></td>
+                <td><input type="submit" name="atualizar" value="Atualizar"></td>                
             </tr>
         </table>
         </form>
+        <h3>Alterar Senha</h3>  
+        <form id="alterar-senha" action="alterarsenha.php" method="POST">
+            Nova senha: <input type="password" name="senha" required><br>    
+            Confirmar senha: <input type="password" name="confirmasenha" required><br><br>
+            <input type="submit" name="alterar" value="Alterar senha">
+        </form>
+        <a href="principal.php">voltar</a> 
+        
     </center>
 
     
